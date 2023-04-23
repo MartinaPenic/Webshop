@@ -1,0 +1,28 @@
+﻿
+@model CollectionViewModel
+
+
+    <section class="collection-twocolumns" >
+        <div class="column bg-gray">
+            <div class="content">
+                <h1 class="title">@Model.Title</h1>
+                <button class="btn-white">@Model.ButtonCaption</button>
+            </div>
+        </div>
+        <div class="column item-collection">
+            @if (Model?.CollectionItems != null)
+            {
+                @foreach (var item in Model.CollectionItems)
+                {
+                    <partial name="~/Views/Shared/Partials/_CollectionItemPartial.cshtml" model="item" />
+                }
+            }
+        </div>
+</section>
+
+
+
+
+
+
+

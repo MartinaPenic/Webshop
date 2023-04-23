@@ -1,0 +1,16 @@
+﻿@model CollectionViewModel
+
+<section class="collection-grid">
+        <div class="container">
+            <h1 class="title">@Model.Title</h1>
+            <div class="item-collection">
+                @if (Model?.CollectionItems != null)
+                {
+                    @foreach (var item in Model.CollectionItems)
+                    {
+                        <partial name="~/Views/Shared/Partials/_CollectionItemPartial.cshtml" model="item" />
+                    }
+                }
+            </div>
+        </div>
+</section>

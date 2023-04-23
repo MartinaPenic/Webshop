@@ -1,0 +1,24 @@
+﻿@model CollectionItemViewModel
+
+<a asp-controller="Product" asp-action="Index" asp-route-id="@Model.Id"  >
+    <div class="item">
+        <div class="image-section">
+            <img src="@Model.ImageUrl" alt="@Model.Title">
+                <div class="icons">
+                    <div class="link"><i class="fa-regular fa-code-compare"></i></div>
+                    <div class="link"><i class="fa-regular fa-heart"></i></div>
+                    <div class="link"><i class="fa-regular fa-bag-shopping"></i></div>
+            </div>
+            <button class="btn-theme">@Model.ButtonCaption</button>
+        </div>
+        <div class="body-section">
+            <div class="category">@Model.Category</div>
+            <div class="image-title">@Model.Title</div>
+            <div class="info">
+                <partial name="~/Views/Shared/Partials/_StarRatingPartial.cshtml" for="AverageRating" />
+                <div class="price">$@Model.Price</div>
+            </div>
+        </div>
+    </div>
+</a>
+

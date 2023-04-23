@@ -1,0 +1,24 @@
+﻿@model Webshop.App.Models.ContactViewModel
+
+
+<section class="contact-form">
+    <div class="title">Come in Contact with Us</div>
+    <form method="post" asp-action="Index" novalidate>
+        <div class="name form-group">
+            <input asp-for="Name" id="name" placeholder="Your Name">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="email form-group">
+            <input asp-for="Email" id="email" type="email" placeholder="Your Mail">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="message form-group">
+            <textarea asp-for="Message" id="message" placeholder="Comments"></textarea>
+            <span asp-validation-for="Message" class="text-danger"></span>
+        </div>
+        <button class="btn-theme">Post Comments</button>
+    </form>
+</section>
+
+
