@@ -7,6 +7,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddHttpClient<IProductService, ProductService>(c => c.BaseAddress = new Uri("https://localhost:7150/"));
 builder.Services.AddHttpClient<IContactService, ContactService>(c => c.BaseAddress = new Uri("https://localhost:7150/"));
+builder.Services.AddHttpClient<IShowcaseService, ShowcaseService>(c => c.BaseAddress = new Uri("https://localhost:7150/"));
 
 var app = builder.Build();
 

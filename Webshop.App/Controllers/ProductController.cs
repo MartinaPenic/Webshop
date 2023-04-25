@@ -17,21 +17,9 @@ namespace Webshop.App.Controllers
         {
             var product = await _productService.GetProduct(id);
 
-            var viewModel = new ItemDetailsViewModel
-            {
-                Id = product.Id,
-                Title = product.Title,
-                Description = product.Description,
-                Category = product.Category,
-                ImageUrl = product.PictureUrl,
-                Price = (int)product.Price,
-                Color = product.Color,
-                Size = product.Size,
-                SKU = product.SKU,
-                Brand = product.Brand,
-                AverageRating = product.AverageRating,
-                ProductRatings = product.Ratings
-            };
+            var viewModel = new ItemDetailsViewModel();
+            viewModel = product;
+
 
             return View(viewModel);
         }

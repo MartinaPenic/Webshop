@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Text.Json;
+using Webshop.App.Helpers;
 using Webshop.App.Models;
 using Webshop.App.Services.Interfaces;
 
@@ -21,10 +22,7 @@ namespace Webshop.App.Services
         {
             var request = new HttpRequestMessage(HttpMethod.Post, $"{BasePath}/create");
             request.Content = new StringContent(JsonSerializer.Serialize(message), Encoding.UTF8, "application/json");
-
-            var response = await _client.SendAsync(request);
-            //if (!response.IsSuccessStatusCode)
-            //    throw new ApplicationException($"Something went wrong calling the API: {response.ReasonPhrase}");
+            await _client.SendAsync(request);
         }
     }
 }

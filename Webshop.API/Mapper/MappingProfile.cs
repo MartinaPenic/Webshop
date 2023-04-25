@@ -12,6 +12,8 @@ namespace Webshop.API.Mapper
             CreateMap<ProductRatingEntity, ProductRatingDto>();
             CreateMap<AddProductDto, ProductEntity>();
             CreateMap<AddProductRatingDto, ProductRatingEntity>();
+            CreateMap<ShowcaseEntity, ShowcaseDto>();
+            CreateMap<AddShowcaseDto, ShowcaseEntity>();
         }
     }
 }

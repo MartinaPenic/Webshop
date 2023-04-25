@@ -1,4 +1,5 @@
-﻿using Webshop.App.Models.Dto;
+﻿using Webshop.App.Helpers;
+using Webshop.App.Models.Dto;
 using Webshop.App.Services.Interfaces;
 
 namespace Webshop.App.Services

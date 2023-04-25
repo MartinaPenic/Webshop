@@ -16,8 +16,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDbContext<DataContext>(ob => ob.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<ProductRepository>();
 builder.Services.AddScoped<MessageRepository>();
+builder.Services.AddScoped<ShowcaseRepository>();
 builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<MessageService>();
+builder.Services.AddScoped<ShowcaseService>();
+
 
 builder.Services.AddSwaggerGen(config =>
 {
@@ -46,7 +49,7 @@ app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
 app.UseHttpsRedirection();
 
-// Middleware registration before authorization
+// Middleware registration 
 app.UseMiddleware<ApiKeyMiddleware>();  
 app.UseAuthorization();
 

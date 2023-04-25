@@ -10,9 +10,10 @@ namespace Webshop.App.Models
 
         [Required(ErrorMessage = "Email is a  required field")]
         [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", ErrorMessage = "Enter a valid email")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Message is a required field")]
+        [Required(ErrorMessage = "Comment is a required field")]
         public string Message { get; set; } 
     }
 }

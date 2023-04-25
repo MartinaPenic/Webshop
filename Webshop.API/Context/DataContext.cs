@@ -17,6 +17,8 @@ namespace Webshop.API.Context
 
         public DbSet<MessageEntity> Messages { get; set; }
 
+        public DbSet<ShowcaseEntity> Showcases { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ProductEntity>().Property(p => p.Price).HasPrecision(16, 3);

@@ -22,7 +22,13 @@ namespace Webshop.App.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(ContactViewModel model)
         {
-            await _contactService.SendMessage(model);
+
+            if (ModelState.IsValid)
+            {
+                await _contactService.SendMessage(model);
+
+                return RedirectToAction("Index", "Contact");
+            }
 
             return View();
         }

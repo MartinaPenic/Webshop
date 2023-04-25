@@ -9,10 +9,12 @@ namespace Webshop.App.Controllers
     public class HomeController : Controller
     {
         private readonly IProductService _productService;
+        private readonly IShowcaseService _showcaseService;
 
-        public HomeController(IProductService productService)
+        public HomeController(IProductService productService, IShowcaseService showcaseService)
         {
             _productService = productService ?? throw new ArgumentNullException(nameof(productService));
+            _showcaseService = showcaseService ?? throw new ArgumentNullException(nameof(productService));
         }
 
         public async Task<IActionResult> Index()
@@ -20,17 +22,12 @@ namespace Webshop.App.Controllers
             var featuredProducts = await _productService.GetFeaturedProducts();
             var newProducts = await _productService.GetNewProducts();
             var popularProducts = await _productService.GetPopularProducts();
+            var newShowcase = await _showcaseService.GetNewShowcase();
 
             var viewModel = new IndexViewModel()
             {
-                Showcase = new ShowcaseViewModel
-                {
-                    Title = "GET UP TO %40 OFF",
-                    Ingress = "Don't miss this opportunity",
-                    Subtitle = "Online shopping free home delivery over $100",
-                    ButtonCaption = "SHOP NOW",
-                    ImageUrl = "static-images/showcase-img.png"
-                },
+                Showcase = newShowcase,
+          
                 Featured = new CollectionViewModel()
                 {
                     Title = "Featured",
@@ -53,30 +50,11 @@ namespace Webshop.App.Controllers
             return View(viewModel);
         }
 
-        private CollectionItemViewModel GetViewModel(Product product) =>
-            new()
-            {
-                Id = product.Id,
-                Category = product.Category,
-                ImageUrl = product.PictureUrl,
-                Price = (int)product.Price,
-                Title = product.Title,
-                AverageRating = product.AverageRating,
-                ButtonCaption = "QUICK VIEW"
-            };
+        private CollectionItemViewModel GetViewModel(Product product) => (CollectionItemViewModel)product;
+          
     }
+
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

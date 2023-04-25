@@ -592,11 +592,11 @@ Collection*/
     }
 
     .collection-twocolumns .column.item-collection {
-            justify-content: flex-start;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 10px;
-            margin-left: 10px;
+         justify-content: flex-start;
+         display: grid;
+         grid-template-columns: 1fr 1fr 1fr;
+         gap: 10px;
+         margin-left: 10px;
     }
 
     .btn-white {
@@ -850,7 +850,8 @@ Collection*/
         grid-template-areas:
             "s"
             "c"
-            "q";
+            "q"
+            "m";
     }
 
     .size{
@@ -866,18 +867,27 @@ Collection*/
         display: inline-block;
     }
 
-        .color div {
-            display: inline-block;
-        }
+    .color div {
+        display: inline-block;
+    }
 
     .quantity {
         grid-area: q;
         display: inline-block;
     }
 
-        .quantity div {
-            display: inline-block;
-        }
+    .quantity div {
+        display: inline-block;
+    }
+
+    .media-share {
+        grid-area: m;
+   
+    }
+
+    .media-share div {
+        display: inline-block;
+    }
 
     .counter {
         width: 20%;
