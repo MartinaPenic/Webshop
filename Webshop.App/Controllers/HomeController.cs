@@ -49,11 +49,8 @@ namespace Webshop.App.Controllers
 
             return View(viewModel);
         }
-
         private CollectionItemViewModel GetViewModel(Product product) => (CollectionItemViewModel)product;
-          
     }
-
 }
 
 

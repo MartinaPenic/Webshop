@@ -1,0 +1,97 @@
+﻿@model AddProductViewModel
+
+<div class="border container">
+
+	<form method="post" class="mx-auto col-10 col-md-8 col-lg-6" asp-action="AddProduct" novalidate>
+		<div class="mb-3 d-flex justify-content-center">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		</div>
+
+		<div class="mb-2">
+			<label asp-for="Name" class="form-label"></label>
+			<input asp-for="Name" class="form-control" />
+			<small><span asp-validation-for="Name" class="text-danger"></span></small>
+		</div>
+
+		<div class="mb-2">
+			<label asp-for="Description" class="form-label"></label>
+			<input asp-for="Description" class="form-control" />
+			<small><span asp-validation-for="Description" class="text-danger"></span></small>
+		</div>
+
+		<div class="mb-2">
+			<label asp-for="IsFeatured" class="form-label"></label>
+			<input asp-for="IsFeatured" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+
+		</div>
+
+		<div class="mb-2">
+			<label asp-for="Price" class="form-label"></label>
+			<input asp-for="Price" class="form-control" type="number" />
+			<small><span asp-validation-for="Price" class="text-danger"></span></small>
+		</div>
+
+		<div class="mb-32">
+			<label asp-for="Discount" class="form-label"></label>
+			<input asp-for="Discount" class="form-control" type="number" />
+			<small><span asp-validation-for="Price" class="text-danger"></span></small>
+		</div>
+
+		<div class="mb-2">
+			<label asp-for="Color" class="form-label"></label>
+			<select asp-for="Color" class="form-control">
+				<option value="White">White</option>
+				<option value="Black">Black</option>
+				<option value="Red">Red</option>
+				<option value="Green">Green</option>
+				<option value="Blue">Blue</option>
+			</select>
+			<small><span asp-validation-for="Color" class="text-danger"></span></small>
+		</div>
+
+		<div class="mb-2">
+			<label asp-for="Category" class="form-label"></label>
+			<select asp-for="Category" class="form-control">
+				<option value="Clothes">Clothes</option>
+				<option value="Shoes">Shoes</option>
+				<option value="Accesories">Accesories</option>
+				<option value="Beauty">Beauty</option>
+				<option value="Sport">Sport</option>
+			</select>
+			<small><span asp-validation-for="Category" class="text-danger"></span></small>
+		</div>
+
+		<div class="mb-2">
+			<label asp-for="Size" class="form-label"></label>
+			<select asp-for="Size" class="form-control">
+				<option value="S">S</option>
+				<option value="M">M</option>
+				<option value="L">L</option>
+				<option value="XL">XL</option>
+			</select>
+			<small><span asp-validation-for="Size" class="text-danger"></span></small>
+		</div>
+
+		<div class="mb-2">
+			<label asp-for="PictureUrl" class="form-label"></label>
+			<input asp-for="PictureUrl" class="form-control" />
+		</div>
+
+		<div class="mb-2">
+			<label asp-for="SKU" class="form-label"></label>
+			<input asp-for="SKU" class="form-control" type="text" />
+			<small><span asp-validation-for="SKU" class="text-danger"></span></small>
+		</div>
+
+		<div class="mb-2">
+			<label asp-for="Brand" class="form-label"></label>
+			<input asp-for="Brand" class="form-control" type="text"  />
+			<small><span asp-validation-for="Brand" class="text-danger"></span></small>
+		</div>
+
+		<div class="d-grid">
+			<button type="submit" class="btn-theme mb-3">Add Product</button>
+		</div>
+
+	</form>
+</div>

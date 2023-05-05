@@ -25,6 +25,11 @@ namespace Webshop.API.Services
             return await _productRepository.AddProductAsync(entity);
         }
 
+        public async Task<bool> DeleteProductAsync(int id)
+        {
+            return await _productRepository.DeleteProductAsync(id); 
+        }
+
         public async Task<ICollection<ProductDto>> GetNewProductsAsync()
         {
             return await _productRepository.GetNewProductsAsync();

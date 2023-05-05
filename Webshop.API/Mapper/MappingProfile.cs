@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Webshop.API.Models.Dto;
 using Webshop.API.Models.Entities;
 
@@ -13,7 +14,7 @@ namespace Webshop.API.Mapper
             CreateMap<AddProductDto, ProductEntity>();
             CreateMap<AddProductRatingDto, ProductRatingEntity>();
             CreateMap<ShowcaseEntity, ShowcaseDto>();
-            CreateMap<AddShowcaseDto, ShowcaseEntity>();
-        }
+			CreateMap<ProductEntity, ProductDto>();
+		}
     }
 }

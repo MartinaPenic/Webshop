@@ -1,0 +1,9 @@
+﻿<div class="admin-container mt-3 full-page">
+	<button class="row mb-5">
+		<a class="btn-white" asp-action="AddProduct">Add Product</a>
+	</button>
+	<form asp-action="Logout" asp-controller="Account" method="post">
+		<input type="hidden" name="tokenName" value="accessToken" />
+		<button type="submit" class="btn-white">Logout</button>
+	</form>
+</div>

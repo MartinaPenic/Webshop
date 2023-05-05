@@ -1,13 +1,15 @@
-﻿/*@import url("h*/ttps://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap");
+﻿/*@import url("h*/
+ttps://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap");
 
-    html, body {
-        font-size: 1em;
-        font-weight: 400;
-        font-family: "Poppins", sans-serif;
-        line-height: 1.5;
-        background-color: #ffffff;
-        color: #222529;
-    }
+html, body {
+    font-size: 1em;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.5;
+    background-color: #ffffff;
+    color: #222529;
+
+}
 
     /*Header*/
 
@@ -899,3 +901,39 @@ Collection*/
         text-align: center;
     }
 
+    .account-container {
+        height:620px;
+        width: 70%;
+        margin: auto;
+    }
+
+    .account-container a{
+       width: 100%;
+       margin-top:100px;
+    }
+
+    .login-container {
+        height: 620px;
+        width: 50%;
+        margin: auto;
+        margin-top: 100px;
+    }
+
+    .login-container button{
+       margin-top: 40px;
+    }
+
+    .admin-container {
+        height: 600px;
+        width: 50%;
+        margin: auto;
+        margin-top: 100px;
+    }
+
+    .admin-container button{
+        width: 100%;
+        margin-top: 80px;
+
+    }
+
+  

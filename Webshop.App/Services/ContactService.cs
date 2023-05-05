@@ -18,10 +18,10 @@ namespace Webshop.App.Services
             _client.DefaultRequestHeaders.Add(ApiKey.Header, ApiKey.Value);
         }
 
-        public async Task SendMessage(ContactViewModel message)
+        public async Task SendMessage(ContactViewModel model)
         {
             var request = new HttpRequestMessage(HttpMethod.Post, $"{BasePath}/create");
-            request.Content = new StringContent(JsonSerializer.Serialize(message), Encoding.UTF8, "application/json");
+            request.Content = new StringContent(JsonSerializer.Serialize(model), Encoding.UTF8, "application/json");
             await _client.SendAsync(request);
         }
     }

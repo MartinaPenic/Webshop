@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Net;
 using Webshop.API.Models.Dto;
-using Webshop.API.Models.Entities;
 using Webshop.API.Services;
 
 namespace Webshop.API.Controllers
@@ -20,23 +18,22 @@ namespace Webshop.API.Controllers
             _showcaseService = showcaseService;
         }
 
-
         [Route("create")]
         [HttpPost]
-        public async Task<IActionResult> AddShowcase(AddShowcaseDto newShowcase)
+        public async Task<IActionResult> AddShowcase(AddShowcaseDto dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var result = await _showcaseService.AddShowcaseAsync(newShowcase);
+            var result = await _showcaseService.AddShowcaseAsync(dto);
 
-            if (result == true) { return Ok(newShowcase); }
+            if (result == true) { return Ok(dto); }
             return StatusCode(500);
         }
 
+
         [Route("new")]
         [HttpGet]
-        [ProducesResponseType(typeof(ProductEntity), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> GetNewProducts()
+        public async Task<IActionResult> GetNewShowcase()
         {
             var showcase = await _showcaseService.GetNewShowcaseAsync();
 

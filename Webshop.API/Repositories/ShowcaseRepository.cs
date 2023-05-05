@@ -34,7 +34,6 @@ namespace Webshop.API.Repositories
             }
         }
 
-
         public async Task<ShowcaseDto> GetNewShowcaseAsync()
         {
             var showcase = await _context.Showcases.OrderByDescending(s => s.CreatedAt).FirstOrDefaultAsync();

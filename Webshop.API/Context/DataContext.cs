@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Webshop.API.Models.Dto;
 using Webshop.API.Models.Entities;
 
 namespace Webshop.API.Context
@@ -8,15 +7,11 @@ namespace Webshop.API.Context
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-
         }
 
         public DbSet<ProductEntity> Products { get; set; }
-
         public DbSet<ProductRatingEntity> Ratings { get; set; }
-
         public DbSet<MessageEntity> Messages { get; set; }
-
         public DbSet<ShowcaseEntity> Showcases { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

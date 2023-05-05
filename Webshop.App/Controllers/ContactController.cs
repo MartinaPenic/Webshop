@@ -13,11 +13,13 @@ namespace Webshop.App.Controllers
             _contactService = contactService ?? throw new ArgumentNullException(nameof(contactService));
         }
 
+
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Index(ContactViewModel model)

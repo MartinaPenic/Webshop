@@ -17,13 +17,13 @@ namespace Webshop.API.Controllers
 
         [Route("create")]
         [HttpPost]
-        public async Task<IActionResult> SendMessage(AddMessageDto newMessage)
+        public async Task<IActionResult> SendMessage(AddMessageDto dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var result = await _messageService.SendMessageAsync(newMessage);
+            var result = await _messageService.SendMessageAsync(dto);
 
-            if(result == true) { return Ok(newMessage); }
+            if(result == true) { return Ok(dto); }
             return StatusCode(500);
         }
     }

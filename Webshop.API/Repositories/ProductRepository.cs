@@ -17,26 +17,42 @@ namespace Webshop.API.Repositories
             _mapper = mapper;
         }
 
-        public async Task<bool> AddProductAsync(ProductEntity newProduct)
+        public async Task<bool> AddProductAsync(ProductEntity entity)
         {
             try
             {
-                _context.Products.Add(newProduct);
+                _context.Products.Add(entity);
                 await _context.SaveChangesAsync();
 
                 return true;
             }
             catch 
-            {
+            { 
                 return false;
             }
         }
+
+        public async Task<bool> DeleteProductAsync(int id)
+        {
+			try
+			{
+				var entity = _context.Products.Single(p => p.Id == id);
+				_context.Products.Remove(entity);
+				await _context.SaveChangesAsync();
+
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+		}
 
         public async Task<ICollection<ProductDto>> GetNewProductsAsync()
         {
             var products = await 
                 _context.Products
-                .Where(p => p.CreatedAt >= DateTime.Now.AddDays(-7))
+                ?.Where(p => p.CreatedAt >= DateTime.Now.AddDays(-30))
                 .Include(p => p.Ratings)
                 .ToListAsync();
 
@@ -94,11 +110,11 @@ namespace Webshop.API.Repositories
             return _mapper.Map<ICollection<ProductRatingDto>>(ratings);
         }
 
-        public async Task<bool> AddProductRatingAsync(ProductRatingEntity productRating)
+        public async Task<bool> AddProductRatingAsync(ProductRatingEntity entity)
         {
             try
             {
-                _context.Ratings.Add(productRating);
+                _context.Ratings.Add(entity);
                 await _context.SaveChangesAsync();
 
                 return true;
